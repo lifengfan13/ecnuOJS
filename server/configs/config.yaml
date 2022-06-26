@@ -1,0 +1,21 @@
+Server:
+  RunMode: debug
+  HttpPort: 8080
+  ReadTimeout: 60
+  WriteTimeout: 60
+App:
+  DefaultPageSize: 10
+  MaxPageSize: 100
+  LogSavePath: storage/logs
+  LogFileName: app
+  LogFileExt: .log
+Database:
+  DBType: mysql
+  Username: root
+  Password: paper123456
+  Host: localhost:3306
+  DBName: paper
+  Charset: utf8
+  ParserTime: True
+  MaxIdleConns: 10
+  MaxOpenConns: 30
