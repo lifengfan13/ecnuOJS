@@ -9,3 +9,7 @@
 1. 前端地址：http://43.138.76.247:8080
 2. 后端接口地址：http://47.103.81.142:8080
 
+## github仓库地址
+```sh
+    https://github.com/lifengfan13/ecnuOJS.git
+```
