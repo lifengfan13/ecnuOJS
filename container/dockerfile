@@ -1,0 +1,23 @@
+# Docker image of paper mysql
+# VERSION v1
+# Author: southNorth
+
+FROM mysql:5.7
+
+#定义工作目录
+ENV WORK_PATH /usr/local/work
+
+#定义会被容器自动执行的目录
+ENV AUTO_RUN_DIR /docker-entrypoint-initdb.d
+
+#创建文件夹
+RUN mkdir -p $WORK_PATH
+
+#把数据库初始化数据的文件复制到工作目录下
+COPY ./hxc.sql $WORK_PATH/
+
+#把要执行的shell文件放到/docker-entrypoint-initdb.d/目录下，容器会自动执行这个shell
+COPY ./createDB.sh $AUTO_RUN_DIR/
+
+#给执行文件增加可执行权限
+RUN chmod a+x $AUTO_RUN_DIR/createDB.sh
